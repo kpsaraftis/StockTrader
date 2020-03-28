@@ -15,6 +15,7 @@
                         <a>Stocks</a>
                     </router-link>
                 </ul>
+                <strong class="navbar-text navbar-right">Funds: {{funds}}</strong>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="#">End Day</a>
@@ -48,10 +49,10 @@
 
 <script>
     export default {
-
-    }
-</script>
-
-<style >
-
-</style>
+        computed: {
+            funds() {
+                return this.$store.getters.funds;
+            }
+        }
+    };
+</script> 
