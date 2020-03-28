@@ -1,11 +1,11 @@
 <template>
-    <h1>the Portfolio</h1>
 </template>
 
 <script>
-export default {
-
-    }</script>
+    export default {
+        name: "Portfolio"
+    };
+</script>
 
 <style>
 </style>
