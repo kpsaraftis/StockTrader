@@ -41,7 +41,7 @@ const getters = {
                 id: stock.id,
                 quantity: stock.quantity,
                 name: record.name,
-                proce: record.price
+                price: record.price
             };
         });
     },
