@@ -1,22 +1,17 @@
 import Vue from 'vue';
+import Vuex from 'vuex';
 
-export const loadData = ({ commit }) => {
-    Vue.http
-        .get('data.json')
-        .then(response => response.json())
-        .then(data => {
-            if (data) {
-                const stocks = data.stocks;
-                const funds = data.funds;
-                const stockPortfolio = data.stockPortfolio;
+import stocks from './modules/stocks';
+import portfolio from './modules/portfolio';
 
-                const portfolio = {
-                    stockPortfolio,
-                    funds
-                };
+import * as actions from './actions';
 
-                commit('SET_STOCKS', stocks);
-                commit('SET_PORTFOLIO', portfolio);
-            }
-        });
-};
+Vue.use(Vuex);
+
+export default new Vuex.Store({
+    actions,
+    modules: {
+        stocks,
+        portfolio
+    }
+});
