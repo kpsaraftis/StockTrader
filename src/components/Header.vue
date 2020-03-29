@@ -37,7 +37,7 @@
                                 <a href="#" @click="saveData">Save Data</a>
                             </li>
                             <li>
-                                <a href="#">Load Data</a>
+                                <a href="#" @click="loadData">Load Data</a>
                             </li>
                         </ul>
                     </li>
@@ -75,7 +75,8 @@
                     stocks: this.$store.getters.stocks
                 };
                 this.$http.put("data.json", data);
-            }
+            },
+            loadData() { }
         }
     };
 </script> 
